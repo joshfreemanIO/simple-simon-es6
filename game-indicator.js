@@ -2,7 +2,8 @@
 
 class GameIndicator {
 
-  constructor($roundIndicator, $roundNumber, $startGameButton) {
+  constructor($gameIndicator, $roundIndicator, $roundNumber, $startGameButton) {
+    this.$gameIndicator = $gameIndicator;
     this.$roundIndicator = $roundIndicator;
     this.$startGameButton = $startGameButton;
     this.$roundNumber = $roundNumber;
@@ -11,6 +12,7 @@ class GameIndicator {
   startGame() {
     this.$startGameButton.hide();
     this.$roundIndicator.show();
+    this._deactivate();
   }
 
   startNextRound() {
@@ -27,6 +29,16 @@ class GameIndicator {
     this.$roundNumber.html(1);
     this.$roundIndicator.hide();
     this.$startGameButton.show();
+  }
+
+  activate(game) {
+    this.$gameIndicator.click(function() {
+      game.startGame();
+    });
+  }
+
+  _deactivate() {
+    this.$gameIndicator.unbind('click');
   }
 }
 
