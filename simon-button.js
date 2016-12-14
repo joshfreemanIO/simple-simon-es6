@@ -17,6 +17,7 @@ class SimonButton {
   constructor($button, SimpleSimon) {
     this.$htmlButton = $button;
     this.SimpleSimon = SimpleSimon;
+    this.audio = new Audio($button.data('sound'));
   }
 
   activate() {
@@ -39,6 +40,7 @@ class SimonButton {
 
     this.$htmlButton.removeClass(primaryColor);
     this.$htmlButton.addClass(primaryColor + '-active');
+    this.audio.play();
   }
 
   powerOff() {
