@@ -1,3 +1,5 @@
+'use strict';
+
 $(document).ready(function() {
   var gameIndicator = new GameIndicator($('.round-indicator'), $('.round-number'), $('.start-game'));
   var game = new SimpleSimonGame(gameIndicator)

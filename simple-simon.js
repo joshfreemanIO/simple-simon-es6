@@ -1,3 +1,5 @@
+'use strict';
+
 class SimpleSimonGame {
   constructor(gameIndicator, simonsStack) {
     this.gameIndicator = gameIndicator;
